@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/intrinsic-value-calculator/static/css/main.dc47d68f.css",
+    "main.js": "/intrinsic-value-calculator/static/js/main.3094da46.js",
+    "static/js/787.e597190e.chunk.js": "/intrinsic-value-calculator/static/js/787.e597190e.chunk.js",
+    "index.html": "/intrinsic-value-calculator/index.html",
+    "main.dc47d68f.css.map": "/intrinsic-value-calculator/static/css/main.dc47d68f.css.map",
+    "main.3094da46.js.map": "/intrinsic-value-calculator/static/js/main.3094da46.js.map",
+    "787.e597190e.chunk.js.map": "/intrinsic-value-calculator/static/js/787.e597190e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dc47d68f.css",
+    "static/js/main.3094da46.js"
+  ]
+}
