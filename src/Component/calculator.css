@@ -1,0 +1,12 @@
+.content {
+    line-height: 2em;
+    font-size: large;
+}
+
+table {
+    padding: 1em;
+}
+
+table tr td {
+    padding-left: 20px;
+}
