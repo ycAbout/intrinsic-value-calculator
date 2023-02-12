@@ -3,10 +3,22 @@
     font-size: large;
 }
 
-table {
-    padding: 1em;
+input {
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
-table tr td {
+table {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+table tr td{
     padding-left: 20px;
+    padding-right: 20px;
+}
+
+table tr th{
+    padding-left: 20px;
+    padding-right: 20px;
 }

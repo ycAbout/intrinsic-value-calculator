@@ -49,14 +49,6 @@ function buildYearlyDataTable(yearlyData) {
 
   const table = [];
 
-  table.push(<thead>
-    <tr>
-      <th>Year</th>
-      <th>Earnings</th>
-      <th>Discounted earnings</th>
-    </tr>
-  </thead>)
-
   for (let i = 0; i < Number(yearlyData.yearlyRows.length); i++) {
 
     table.push(<tr>
@@ -99,19 +91,19 @@ function Calculator(props) {
 
   const data = yearlyData(
     Number(parameters.holdingPeriod),
-    Number(parameters.earningIncreateRate)/100,
-    Number(parameters.cashDiscountRate)/100,
+    Number(parameters.earningIncreateRate) / 100,
+    Number(parameters.cashDiscountRate) / 100,
     Number(parameters.currentEarning)
   );
 
   const table = buildYearlyDataTable(data);
 
-  const discountedTerminalValue = adjustAmount('discount', parameters.holdingPeriod, Number(parameters.cashDiscountRate)/100, Number(parameters.terminalValue));
+  const discountedTerminalValue = adjustAmount('discount', parameters.holdingPeriod, Number(parameters.cashDiscountRate) / 100, Number(parameters.terminalValue));
 
   const intrinsicValue = (Number(parameters.currentCash) +
     Number(data.totalDiscountedEarning) +
     Number(discountedTerminalValue)
-  ) * (1 - Number(parameters.safetyMarginRate)/100);
+  ) * (1 - Number(parameters.safetyMarginRate) / 100);
 
   return (
     <section>
@@ -143,8 +135,17 @@ function Calculator(props) {
         </div>
 
         <div>
-          <table className='table'>
-            {table}
+          <table>
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Earnings</th>
+                <th>Discounted earnings</th>
+              </tr>
+            </thead>
+            <tbody>
+              {table}
+            </tbody>
           </table>
         </div>
 
@@ -163,17 +164,19 @@ function Calculator(props) {
         </div>
 
         <div>
-          <span>Safety Margin rate: </span>
+          <span>Safety margin rate: </span>
           <input type="number" name="safetyMarginRate" onChange={handleChange} value={parameters.safetyMarginRate}></input>
           <span>%</span>
         </div>
 
+        <br></br>
         <div>
-          <div>Current cash and equivalents</div>
+          <div>(Current cash and equivalents</div>
           <div>+ All discounted earnings</div>
-          <div>+ Discounted terminal value</div>
+          <div>+ Discounted terminal value)</div>
+          <div>/ (1 - Safety margin rate)</div>
+          <hr></hr>
           <div> = Intrinsic Value: {intrinsicValue}</div>
-          <p></p>
         </div>
       </div>
 
